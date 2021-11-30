@@ -1,6 +1,8 @@
 package sgi.ecom.rating.demo.model;
 
 import lombok.Data;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -9,9 +11,12 @@ import java.util.ArrayList;
 @Data
 @Document(collection = "productRate")
 public class ProdRates {
-    @Field("class")
-    public String classy;
+
+    @Id
+    public ObjectId id;
     public String productSku;
+    @Field("class")
+    public String className;
     public Boolean commercial;
     public String coverageCode;
     public String coverageDescription;
@@ -34,4 +39,19 @@ public class ProdRates {
     public ArrayList rates;
     public Integer regulatedRuleId;
     public String riskType;
+    public String startingInterval;
+    public String startingIntervalName;
+    public String surcharges;
+    public Integer termMileage;
+    public Integer termMonthsMax;
+    public Integer termMonthsMin;
+    public String vehicleCondition;
+    public Integer vehicleCostMax;
+    public Integer vehicleCostMin;
+    public String coverageDescriptionPortal;
+    public ArrayList coverageOption;
+    public String carrierSku;
+    public ArrayList regulatedRules;
+    public String dealerTierProgramType;
+
 }
