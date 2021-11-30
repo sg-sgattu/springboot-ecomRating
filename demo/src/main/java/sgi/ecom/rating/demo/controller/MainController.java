@@ -23,7 +23,7 @@ public class MainController{
     ProductRatesRepository productRatesRepository;
 
     @GetMapping("/dealer/{dealerCode}")
-    public Flux<Dealer> getDealers(@PathVariable("dealerCode") String dealerCode)
+    public Mono<Dealer> getDealers(@PathVariable("dealerCode") String dealerCode)
     {
         System.out.println("DEALER CODE " + dealerCode);
         return dealerRepository.findByDealerCode(dealerCode);
@@ -42,7 +42,6 @@ public class MainController{
     public Flux<ProdRates> getProdRates(@RequestBody List<ProdRates> body)
     {
         System.out.println("PROD RATES REQ" + body);
-
         return productRatesRepository.findRates(body);
 
     }

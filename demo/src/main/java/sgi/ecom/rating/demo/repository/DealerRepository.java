@@ -8,12 +8,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import sgi.ecom.rating.demo.model.Dealer;
 
 import java.util.List;
 
 @Repository
 public interface DealerRepository extends ReactiveMongoRepository<Dealer,String> {
-    Flux<Dealer> findByDealerCode(String dealerCode);
+    Mono<Dealer> findByDealerCode(String dealerCode);
 
 }
