@@ -39,7 +39,7 @@ public class MainController{
     }
 
     @GetMapping("/prodrates")
-    public Flux<ProdRates> getProdRates(@RequestBody List<ProdRates> body)
+    public Flux<ProdRates> getProdRates(@RequestBody List<Object> body)
     {
         System.out.println("PROD RATES REQ" + body);
         return productRatesRepository.findRates(body);

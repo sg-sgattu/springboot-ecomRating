@@ -18,7 +18,7 @@ public interface ProductRatesRepository extends ReactiveMongoRepository<ProdRate
     Flux<ProdRates> findProdRates(String productCode);
 
     @Query("{'$or': :#{#doc}}")
-    Flux<ProdRates> findRates(List<ProdRates> doc);
+    Flux<ProdRates> findRates(List<Object> doc);
 
 
 }
