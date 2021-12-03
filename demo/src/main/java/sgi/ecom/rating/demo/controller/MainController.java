@@ -1,5 +1,9 @@
 package sgi.ecom.rating.demo.controller;
 
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
+import com.mongodb.reactivestreams.client.MongoClient;
+import com.mongodb.reactivestreams.client.MongoClients;
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +43,7 @@ public class MainController{
     }
 
     @GetMapping("/prodrates")
-    public Flux<ProdRates> getProdRates(@RequestBody List<Object> body)
+    public Flux<ProdRates> getProdRates(@RequestBody List<ProdRates> body)
     {
         System.out.println("PROD RATES REQ" + body);
         return productRatesRepository.findRates(body);

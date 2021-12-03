@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.util.ArrayList;
 
 @Data
-@Document(collection = "prodRates")
+@Document(collection = "productRate")
 public class ProdRates {
 
     @Id

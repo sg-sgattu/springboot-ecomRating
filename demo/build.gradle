@@ -21,12 +21,18 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'com.amazonaws:aws-lambda-java-core:1.2.1'
+	implementation 'com.amazonaws:aws-lambda-java-events:3.1.0'
+	implementation('org.mongodb:mongodb-driver-legacy:4.1.1')
+	implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.1000')
+	runtimeOnly 'com.amazonaws:aws-lambda-java-log4j2:1.2.0'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 }
+
 
 test {
 	useJUnitPlatform()
